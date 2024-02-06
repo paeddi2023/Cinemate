@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Backup from "../assets/images/backup.png";
 import { Button } from "../components";
+import { useTitle } from "../hooks";
 
 export const MovieDetails = () => {
   const params = useParams();
@@ -22,8 +23,7 @@ export const MovieDetails = () => {
     fetchMovie();
   }, [params.id]);
 
-  //eslint-disable-next-line
-  const pageTitle = useTitle(movie.title);
+  useTitle(movie.title);
 
   return (
     <main>
