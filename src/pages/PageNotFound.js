@@ -4,8 +4,8 @@ import { Button } from "../components";
 import { useTitle } from "../hooks";
 
 export const PageNotFound = () => {
-  useTitle(`Page not Found `);
-  
+  //eslint-disable-next-line
+  const pageTitle = useTitle(`Page not Found `);
 
   return (
     <main>

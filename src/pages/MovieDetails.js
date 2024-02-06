@@ -22,11 +22,8 @@ export const MovieDetails = () => {
     fetchMovie();
   }, [params.id]);
 
-  useEffect(() => {
-    document.title = `${movie.title} /Cinemate`;
-  });
-
-  
+  //eslint-disable-next-line
+  const pageTitle = useTitle(movie.title);
 
   return (
     <main>
@@ -87,10 +84,11 @@ export const MovieDetails = () => {
           </div>
           <div className="flex flex-wrap mx-2">
             <span className="text-2xl font-bold">IMDB Code: </span>
-            <Link to={`https://www.imdb.com/title/${movie.imdb_id}`} target="blank">
-              <Button>
-                Ansehen
-              </Button>
+            <Link
+              to={`https://www.imdb.com/title/${movie.imdb_id}`}
+              target="blank"
+            >
+              <Button>Ansehen</Button>
             </Link>
           </div>
         </div>
